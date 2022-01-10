@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import Button from "../../components/Button/";
+import NavBar from "../../components/NavBar";
 
 import "./index.css";
 
@@ -43,20 +44,26 @@ const texteRef = useRef();
 
   return (  
     <div className="todo">
-      <div>
-        <input type="text" ref={texteRef} />
-        <Button texte="Ajouter" onClick={ajouter}></Button>
-      </div>
+    <NavBar></NavBar>
+      <div className="todos_list">
 
-      <ul>
-        {todos.map((todo) => (
-          <li key={todo.id} id={`todo-${todo.id}`}>
-            {todo.texte}{" "}
-            <Button onClick={() => supprimer(todo.id)} texte="Supprimer" />
-          </li>
-        ))}
-      </ul>
-      <Button texte="Mon Bouton"></Button>
+        <div>
+          <input type="text" ref={texteRef} />
+          <Button texte="Ajouter" onClick={ajouter}></Button>
+        </div>
+
+        <ul>
+          {todos.map((todo) => (
+            <li key={todo.id} id={`todo-${todo.id}`}>
+              {todo.texte}{" "}
+              <Button onClick={() => supprimer(todo.id)} texte="Supprimer" />
+            </li>
+          ))}
+        </ul>
+
+        <Button texte="Mon Bouton"></Button>
+        
+      </div>
     </div>
   );
 };

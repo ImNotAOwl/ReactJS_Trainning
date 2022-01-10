@@ -3,15 +3,3 @@
     padding: 0;
     margin: 0;
 }
-
-nav {
-    background-color: paleturquoise;
-    text-align: center;
-    padding: 15px;
-}
-
-nav a {
-    font-size: 2em;
-    text-decoration: none;
-    padding: 15px;
-}

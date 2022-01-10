@@ -1,0 +1,11 @@
+nav {
+    background-color: paleturquoise;
+    text-align: center;
+    padding: 15px;
+}
+
+nav a {
+    font-size: 1.3em;
+    text-decoration: none;
+    padding: 15px;
+}
