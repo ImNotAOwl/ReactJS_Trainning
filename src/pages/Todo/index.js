@@ -47,7 +47,7 @@ const texteRef = useRef();
     <NavBar></NavBar>
       <div className="todos_list">
 
-        <div>
+        <div className="nouvelle_tache">
           <input type="text" ref={texteRef} />
           <Button texte="Ajouter" onClick={ajouter}></Button>
         </div>
@@ -61,8 +61,6 @@ const texteRef = useRef();
           ))}
         </ul>
 
-        <Button texte="Mon Bouton"></Button>
-        
       </div>
     </div>
   );
