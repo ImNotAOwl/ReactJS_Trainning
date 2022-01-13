@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import Button from "../../components/Button/";
 import NavBar from "../../components/NavBar";
 
@@ -16,7 +16,7 @@ const Todo = () => {
 
   // const [newTodoTexte, setNewTodoTexte] = useState();
 
-const texteRef = useRef();
+  const texteRef = useRef();
 
   let supprimer = (id) => {
     //const newTodos = [...todos]; // copie de tableau pas une référence à todo
@@ -42,14 +42,52 @@ const texteRef = useRef();
     setTodos(prevState => [...prevState, newTodo]);
   }
 
+  const supprimerAll = () => {
+    setTodos([]);
+  }
+
+  const idRef = useRef();
+
+  const chercher = () => {
+    const idTodo = idRef.current.value;
+    console.log(idTodo);
+
+    setTodos((prevState) => prevState.filter((todo) => todo.id === idTodo));
+
+  }
+
+  const [textInput, setTextInput ] = useState("");
+  const btnRef = useRef();
+
+  useEffect(() => {
+    console.log(textInput);
+    console.log(btnRef.current);
+    
+    if (textInput.length < 10) {
+      btnRef.current.style.display = "none";
+    } else {
+      btnRef.current.style.display = "";
+    }
+
+
+  });
+
+
+
   return (  
     <div className="todo">
     <NavBar></NavBar>
       <div className="todos_list">
 
         <div className="nouvelle_tache">
-          <input type="text" ref={texteRef} />
-          <Button texte="Ajouter" onClick={ajouter}></Button>
+          <input type="text" ref={texteRef} onChange={(e) => setTextInput(e.target.value)} />
+          <button onClick={ajouter} ref={btnRef}>Ajouter</button>
+          <Button texte="Supprimer Tout" onClick={supprimerAll}></Button>
+        </div>
+
+        <div>
+          <input type="number" ref={idRef} />
+          <Button texte="Chercher" onClick={chercher}></Button>
         </div>
 
         <ul>

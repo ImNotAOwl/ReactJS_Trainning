@@ -1,6 +1,5 @@
 import NavBar from "../../components/NavBar";
 
-
 import './index.css';
 
 const About = () => {
@@ -10,7 +9,9 @@ const About = () => {
     return (
        <div className="about">
             <NavBar></NavBar>
-           À propos
+            <p className="content">
+            À propos
+            </p>
        </div>
     );
 }
