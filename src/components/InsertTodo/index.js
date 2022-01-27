@@ -32,12 +32,14 @@ const InsertTodo = ({setTodos}) => {
 
     return (
         <>
-            <form className="form_insert_todo">
-                <input type="text" ref={task_desc} onChange={cleanStatus}/>
-                <input type="text" ref={attribute_to} onChange={cleanStatus}/>
-                <input type="submit" value="Insert" onClick={(e) => addTodo(e)} />
-                <p ref={statusTask}></p>
-            </form>
+            <div className="content">
+                <form className="form_insert_todo">
+                    <input type="text" ref={task_desc} onChange={cleanStatus}/>
+                    <input type="text" ref={attribute_to} onChange={cleanStatus}/>
+                    <input type="submit" value="Insert" onClick={(e) => addTodo(e)} />
+                    <p ref={statusTask}></p>
+                </form>
+            </div>
         </>
     )
 

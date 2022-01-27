@@ -6,6 +6,7 @@
 }
 
 .form_insert_todo p {
+    display: block;
     align-self: flex-end;
     color: green;
     padding: 3px;
