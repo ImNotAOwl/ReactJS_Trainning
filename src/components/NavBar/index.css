@@ -9,3 +9,8 @@ nav a {
     text-decoration: none;
     padding: 15px;
 }
+
+.active {
+    color: goldenrod;
+    font-style: italic;
+}
