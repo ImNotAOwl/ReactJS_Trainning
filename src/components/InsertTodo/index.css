@@ -1,0 +1,13 @@
+.form_insert_todo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px;
+}
+
+.form_insert_todo p {
+    align-self: flex-end;
+    color: green;
+    padding: 3px;
+    margin-left: 20px;
+}
